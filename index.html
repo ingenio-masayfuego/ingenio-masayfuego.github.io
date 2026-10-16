@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Catálogo de arepas y envueltos de Ingenio · Masa y Fuego. Hechos a mano en Bogotá.">
+<meta name="theme-color" content="#F4EEE2">
+<meta property="og:title" content="Catálogo · Ingenio Artesanal">
+<meta property="og:description" content="13 sabores de arepas y envueltos, hechos a mano cada madrugada. Pedidos por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="portada-enlace.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;font:14px system-ui,-apple-system,sans-serif}
+  img{max-width:100%} [hidden]{display:none!important}
+</style>
+<title>Catálogo Ingenio Artesanal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Karla:wght@400;500;600&display=swap">
+
+<style>
+/* Libro de una sola hoja: la página gira sobre su lomo izquierdo y descubre la siguiente. */
+:root{
+  --papel:#F4EEE2; --papel2:#EBE1CF; --tinta:#2A2018; --suave:#6D5E4C;
+  --oro:#A8761F; --verde:#45583A; --terra:#9C4E35; --linea:#D8CBB5;
+  --lomo:rgba(42,32,24,.13); --sombra:rgba(42,32,24,.16);
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --ui:'Karla',system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --papel:#191511; --papel2:#221C16; --tinta:#EFE6D8; --suave:#A3917B;
+  --oro:#D7A94F; --verde:#8EA87A; --terra:#D08567; --linea:#3C332A;
+  --lomo:rgba(0,0,0,.42); --sombra:rgba(0,0,0,.5); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --papel:#191511; --papel2:#221C16; --tinta:#EFE6D8; --suave:#A3917B;
+  --oro:#D7A94F; --verde:#8EA87A; --terra:#D08567; --linea:#3C332A;
+  --lomo:rgba(0,0,0,.42); --sombra:rgba(0,0,0,.5); color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;background:var(--papel);color:var(--tinta);font-family:var(--ui);
+  display:flex;flex-direction:column;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:14px 10px;gap:12px;overflow:hidden;
+}
+
+/* ---------- cabecera ---------- */
+.tope{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.rotulo{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--suave);font-weight:600}
+.btn{
+  font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  background:none;border:1px solid var(--linea);color:var(--suave);
+  padding:8px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;
+}
+.btn:hover{border-color:var(--oro);color:var(--oro)}
+.btn:focus-visible{outline:2px solid var(--oro);outline-offset:2px}
+.tope .btn{margin-left:auto}
+
+/* ---------- libro ---------- */
+.escena{flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;perspective:2400px}
+.libro{
+  position:relative;height:100%;width:auto;aspect-ratio:.78;
+  max-width:min(100%,560px);transform-style:preserve-3d;
+}
+.hoja{
+  position:absolute;inset:0;transform-origin:left center;transform-style:preserve-3d;
+  transform:rotateY(0deg);transition:transform .66s cubic-bezier(.46,.03,.3,1);
+}
+.hoja.pasada{transform:rotateY(-179.9deg)}
+.cara{
+  position:absolute;inset:0;backface-visibility:hidden;overflow:hidden;
+  background:var(--papel2);border:1px solid var(--linea);border-radius:3px 9px 9px 3px;
+  box-shadow:0 1px 2px var(--sombra),0 14px 36px -16px var(--sombra);
+  padding:clamp(22px,5.2%,38px);display:flex;flex-direction:column;
+}
+.cara::before{ /* sombra del lomo */
+  content:"";position:absolute;left:0;top:0;bottom:0;width:26px;pointer-events:none;
+  background:linear-gradient(90deg,var(--lomo),transparent);
+}
+.motivo{position:absolute;right:-16%;bottom:-18%;width:58%;opacity:.12;pointer-events:none}
+.motivo svg{width:100%;height:auto;display:block}
+
+/* ---------- contenido de página ---------- */
+.cab{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex:0 0 auto}
+.marca{font-size:clamp(8px,1.9vw,10px);letter-spacing:.3em;text-transform:uppercase;color:var(--suave);font-weight:600}
+.lin{font-size:clamp(8px,1.9vw,10px);letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+.centro{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:0}
+.nuevo{
+  align-self:flex-start;border:1px solid var(--terra);color:var(--terra);border-radius:999px;
+  padding:5px 13px;font-size:clamp(8px,1.8vw,10px);letter-spacing:.2em;text-transform:uppercase;
+  font-weight:600;margin-bottom:clamp(10px,2.4%,16px);
+}
+.nombre{font-family:var(--display);font-weight:600;line-height:1.02;letter-spacing:-.015em;text-wrap:balance}
+.regla{width:38px;height:2px;margin:clamp(14px,3.4%,22px) 0 clamp(12px,3%,18px)}
+.comp{font-size:clamp(11px,2.5vw,14px);line-height:1.45;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.leg{font-family:var(--display);font-style:italic;font-size:clamp(14px,3.4vw,19px);
+     line-height:1.5;color:var(--suave);margin-top:clamp(14px,3.4%,22px);text-wrap:pretty}
+.pie{flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;gap:10px;
+     border-top:1px solid var(--linea);padding-top:clamp(10px,2.4%,16px);
+     font-size:clamp(8px,1.9vw,10px);letter-spacing:.2em;text-transform:uppercase;color:var(--suave);font-weight:600}
+
+/* portada / divisores / cierre */
+.centrado{align-items:center;text-align:center}
+.titulo{font-family:var(--display);font-weight:600;line-height:1.04;letter-spacing:-.02em;text-wrap:balance}
+.sub{font-family:var(--display);font-style:italic;color:var(--suave);line-height:1.5;text-wrap:pretty}
+.filete{width:34px;height:1px;background:var(--oro)}
+.dato{font-size:clamp(9px,2vw,11px);letter-spacing:.22em;text-transform:uppercase;color:var(--suave);font-weight:600}
+.emblema{width:clamp(66px,16%,104px);opacity:.6}
+.emblema svg{width:100%;height:auto;display:block}
+.caja{border:1px solid var(--linea);background:var(--papel);border-radius:6px;
+      padding:clamp(16px,4%,26px) clamp(20px,6%,38px)}
+.enlace{display:block;text-decoration:none;color:inherit}
+.enlace.caja:hover,.enlace.caja:focus-visible{border-color:var(--oro);outline:none}
+.ig{display:inline-flex;align-items:center;gap:8px;color:var(--suave);
+    font-size:clamp(12px,2.9vw,15px);font-weight:600;letter-spacing:.02em}
+.ig svg{width:17px;height:17px;flex:0 0 auto}
+.ig:hover,.ig:focus-visible{color:var(--oro);outline:none}
+.wa{font-family:var(--display);font-weight:600;font-size:clamp(20px,5.2vw,30px);margin-top:6px;word-break:break-word}
+
+/* ---------- controles ---------- */
+.mandos{flex:0 0 auto;display:flex;align-items:center;gap:12px;justify-content:center}
+.flecha{
+  width:44px;height:44px;border-radius:999px;border:1px solid var(--linea);background:var(--papel2);
+  color:var(--tinta);cursor:pointer;display:grid;place-items:center;flex:0 0 auto;
+}
+.flecha:hover:not(:disabled){border-color:var(--oro);color:var(--oro)}
+.flecha:disabled{opacity:.3;cursor:default}
+.flecha:focus-visible{outline:2px solid var(--oro);outline-offset:2px}
+.flecha svg{width:17px;height:17px}
+.medidor{flex:1 1 auto;max-width:190px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.barra{width:100%;height:2px;background:var(--linea);border-radius:2px;overflow:hidden}
+.barra i{display:block;height:100%;background:var(--oro);transition:width .4s ease}
+.cuenta{font-size:11px;letter-spacing:.18em;color:var(--suave);font-weight:600;font-variant-numeric:tabular-nums}
+
+/* ---------- índice ---------- */
+.velo{position:fixed;inset:0;background:rgba(20,15,10,.5);z-index:20;display:grid;place-items:end center;padding:0}
+.panel{
+  width:min(100%,560px);max-height:82%;background:var(--papel);border:1px solid var(--linea);
+  border-radius:14px 14px 0 0;display:flex;flex-direction:column;overflow:hidden;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.panel h2{font-family:var(--display);font-weight:600;font-size:19px;margin:0}
+.panel .enc{display:flex;align-items:center;gap:12px;padding:18px 20px 12px;border-bottom:1px solid var(--linea)}
+.panel .enc .btn{margin-left:auto}
+.lista{overflow-y:auto;padding:6px 10px 16px}
+.grupo{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--suave);
+       font-weight:600;padding:16px 12px 8px}
+.item{display:flex;align-items:baseline;gap:12px;width:100%;text-align:left;background:none;
+      border:0;border-radius:8px;padding:11px 12px;cursor:pointer;color:inherit;font:inherit}
+.item:hover,.item:focus-visible{background:var(--papel2);outline:none}
+.item b{font-family:var(--display);font-weight:600;font-size:16px;min-width:7.5em}
+.item span{font-size:12.5px;color:var(--suave);line-height:1.35}
+
+@media (prefers-reduced-motion:reduce){ .hoja{transition:none} .barra i{transition:none} }
+</style>
+</head>
+<body>
+
+
+<div class="tope">
+  <div class="rotulo">Ingenio Artesanal</div>
+  <button class="btn" id="bIndice" aria-haspopup="dialog">Índice</button>
+</div>
+
+<div class="escena">
+  <div class="libro" id="libro" role="group" aria-roledescription="catálogo hojeable" aria-label="Catálogo de productos"></div>
+</div>
+
+<div class="mandos">
+  <button class="flecha" id="bAtras" aria-label="Página anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <div class="medidor">
+    <div class="barra"><i id="barra" style="width:0%"></i></div>
+    <div class="cuenta" id="cuenta">1 / 17</div>
+  </div>
+  <button class="flecha" id="bAdelante" aria-label="Página siguiente">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+</div>
+
+<script>
+const AREPA = `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2">
+  <circle cx="60" cy="60" r="50"/><circle cx="60" cy="60" r="31" stroke-dasharray="3 5"/></svg>`;
+const ENVUELTO = `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2"
+  stroke-linecap="round" stroke-linejoin="round">
+  <path d="M30 42h60a12 12 0 0 1 12 12v12a12 12 0 0 1-12 12H30a12 12 0 0 1-12-12V54a12 12 0 0 1 12-12z"/>
+  <path d="M18 48l-9-8M18 72l-9 8M102 48l9-8M102 72l9 8"/><path d="M60 42v36"/></svg>`;
+
+const LINEAS = [
+  { nombre:'Arepas', sub:'Maíz peto', color:'var(--oro)', motivo:AREPA, items:[
+    ['Pura','Maíz peto · sin lácteos · bajo en azúcar','El grano en su estado más honesto y limpio.',0],
+    ['Cepa','Masa original de maíz','De pura cepa: la receta raíz de la que nace todo.',0],
+    ['Alborada','Masa original con queso campesino fresco','El momento exacto en que sale el sol y huele a café recién colado.',0],
+    ['Idilio','Masa original con queso campesino y bocadillo','La historia de romance más antigua y perfecta de la naturaleza, hecha sabor.',0],
+    ['Cauce','Masa original con queso doble crema','Como un río que fluye libre por la tierra al derretirse con el calor.',0],
+    ['Brisas de Sal','Masa original con queso costeño','El sabor que trae la brisa y el recuerdo del mar.',1],
+    ['Serrana','Arepa paisa · solo maíz · delgada y extradelgada','La pura y viva tradición de la montaña.',1],
+  ]},
+  { nombre:'Envueltos', sub:'Masa de mazorca', color:'var(--verde)', motivo:ENVUELTO, items:[
+    ['Tierra','Mazorca tierna · sin lácteos · bajo en azúcar','El sabor intacto del cultivo, el origen de donde brota todo.',0],
+    ['Memoria','Masa original de mazorca tierna','Un solo bocado te devuelve a las raíces y al fogón de antaño.',0],
+    ['Antaño','Masa original con uvas pasas','El fruto secado al sol que recuerda a las cosechas clásicas.',0],
+    ['Capricho','Masa original con queso y bocadillo','El antojo natural donde contrastan los frutos de la tierra.',0],
+    ['Melao','Masa original con coco caramelizado artesanal','El almíbar dorado de la caña y el fruto de la palma.',0],
+    ['Mestiza','Masa original con salsa roja de chiles mexicanos','Fusión de nuestra siembra con el fuego de otras tierras.',0],
+  ]},
+];
+
+const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const TOTAL_PROD = LINEAS.reduce((a,l) => a + l.items.length, 0);
+
+/* ---- construcción de las páginas ---- */
+const paginas = [];
+
+paginas.push({ tipo:'portada', titulo:'Catálogo de sabores', html:`
+  <div class="centro centrado">
+    <div class="marca">Ingenio Artesanal</div>
+    <div class="filete" style="margin:clamp(16px,4%,26px) 0"></div>
+    <div class="titulo" style="font-size:clamp(34px,8.6vw,54px)">
+      Catálogo<br><span style="font-style:italic;color:var(--oro)">de sabores</span></div>
+    <div class="sub" style="font-size:clamp(14px,3.5vw,19px);margin-top:clamp(16px,4%,24px)">
+      Arepas y envueltos hechos a mano,<br>cada madrugada</div>
+    <div class="dato" style="margin-top:clamp(22px,5.5%,36px)">${TOTAL_PROD} productos · 2 líneas</div>
+  </div>
+  <div class="pie"><span>Bogotá</span><span>@ingenio.masayfuego</span></div>` });
+
+LINEAS.forEach(l => {
+  paginas.push({ tipo:'linea', titulo:'Línea ' + l.nombre, html:`
+    <div class="centro centrado">
+      <div class="emblema" style="color:${l.color}">${l.motivo}</div>
+      <div class="dato" style="margin-top:clamp(18px,4.5%,30px)">Línea</div>
+      <div class="titulo" style="font-size:clamp(36px,9vw,58px);color:${l.color};margin-top:8px">${l.nombre}</div>
+      <div class="sub" style="font-size:clamp(14px,3.4vw,19px);margin-top:12px">${l.sub}</div>
+      <div class="filete" style="background:${l.color};margin:clamp(18px,4.5%,28px) 0 0"></div>
+      <div class="dato" style="margin-top:clamp(14px,3.5%,22px)">${l.items.length} referencias</div>
+    </div>` });
+
+  l.items.forEach(([n, q, leg, nv], i) => {
+    paginas.push({ tipo:'producto', titulo:n, linea:l.nombre, comp:q, color:l.color, motivo:l.motivo, html:`
+      <div class="motivo" style="color:${l.color}">${l.motivo}</div>
+      <div class="cab"><div class="marca">Ingenio Artesanal</div>
+        <div class="lin" style="color:${l.color}">${l.nombre}</div></div>
+      <div class="centro">
+        ${nv ? '<div class="nuevo">Nuevo</div>' : ''}
+        <div class="nombre" style="font-size:clamp(${n.length > 9 ? 30 : 38}px,${n.length > 9 ? 7.6 : 9.4}vw,${n.length > 9 ? 46 : 58}px)">${esc(n)}</div>
+        <div class="regla" style="background:${l.color}"></div>
+        <div class="comp">${esc(q)}</div>
+        <div class="leg">«${esc(leg)}»</div>
+      </div>
+      <div class="pie"><span>${String(i+1).padStart(2,'0')} / ${String(l.items.length).padStart(2,'0')}</span>
+        <span>Empacado al vacío</span></div>` });
+  });
+});
+
+paginas.push({ tipo:'cierre', titulo:'Haz tu pedido', html:`
+  <div class="centro centrado">
+    <div class="marca">Ingenio Artesanal</div>
+    <div class="filete" style="margin:clamp(12px,3.2%,20px) 0"></div>
+    <div class="titulo" style="font-size:clamp(26px,6.6vw,40px)">Haz tu pedido</div>
+    <div class="sub" style="font-size:clamp(13px,3.2vw,17px);margin-top:clamp(10px,2.6%,16px)">
+      Escríbenos y te contamos qué hay<br>listo para mañana.</div>
+
+    <a class="caja enlace" href="https://wa.me/573007769903" target="_blank" rel="noopener"
+       style="margin-top:clamp(16px,4%,26px)">
+      <div class="dato">WhatsApp</div>
+      <div class="wa" id="numero">300 776 9903</div>
+    </a>
+    <button class="btn" id="bCopiar" style="margin-top:10px">Copiar número</button>
+
+    <a class="enlace ig" href="https://instagram.com/ingenio.masayfuego" target="_blank" rel="noopener"
+       style="margin-top:clamp(16px,4%,24px)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+        <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>
+        <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+      <span>@ingenio.masayfuego</span></a>
+
+    <div style="margin-top:clamp(14px,3.6%,22px);font-size:clamp(11px,2.7vw,14px);
+                line-height:1.85;color:var(--suave)">
+      Entregas en [tus zonas] · Pedidos desde [cantidad mínima]<br>Hechos a mano el mismo día</div>
+  </div>` });
+
+/* ---- montaje ---- */
+const libro = document.getElementById('libro');
+const N = paginas.length;
+paginas.forEach((p, i) => {
+  const h = document.createElement('div');
+  h.className = 'hoja';
+  h.style.zIndex = N - i;
+  h.innerHTML = `<div class="cara" aria-label="${esc(p.titulo)}">${p.html}</div>`;
+  libro.appendChild(h);
+});
+const hojas = [...libro.children];
+
+let actual = 0;
+const bAtras = document.getElementById('bAtras');
+const bAdelante = document.getElementById('bAdelante');
+const cuenta = document.getElementById('cuenta');
+const barra = document.getElementById('barra');
+
+function pintar(){
+  hojas.forEach((h, i) => {
+    const pasada = i < actual;
+    h.classList.toggle('pasada', pasada);
+    h.style.zIndex = pasada ? i : N - i;
+    h.querySelector('.cara').setAttribute('aria-hidden', i === actual ? 'false' : 'true');
+  });
+  cuenta.textContent = `${actual + 1} / ${N}`;
+  barra.style.width = ((actual + 1) / N * 100) + '%';
+  bAtras.disabled = actual === 0;
+  bAdelante.disabled = actual === N - 1;
+}
+const ir = n => { const d = Math.max(0, Math.min(N - 1, n)); if (d !== actual){ actual = d; pintar(); } };
+
+bAdelante.onclick = () => ir(actual + 1);
+bAtras.onclick = () => ir(actual - 1);
+addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'PageDown'){ e.preventDefault(); ir(actual + 1); }
+  if (e.key === 'ArrowLeft'  || e.key === 'PageUp'){ e.preventDefault(); ir(actual - 1); }
+  if (e.key === 'Home') ir(0);
+  if (e.key === 'End') ir(N - 1);
+  if (e.key === 'Escape') cerrarIndice();
+});
+
+/* toque: pulsar mitades y deslizar */
+let x0 = null, y0 = null, movido = false;
+libro.addEventListener('pointerdown', e => { x0 = e.clientX; y0 = e.clientY; movido = false; });
+libro.addEventListener('pointermove', e => {
+  if (x0 !== null && Math.abs(e.clientX - x0) > 12) movido = true;
+});
+libro.addEventListener('pointerup', e => {
+  if (x0 === null) return;
+  const dx = e.clientX - x0, dy = e.clientY - y0;
+  if (movido && Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy)) ir(actual + (dx < 0 ? 1 : -1));
+  else if (!movido){
+    const r = libro.getBoundingClientRect();
+    ir(actual + (e.clientX - r.left > r.width * 0.38 ? 1 : -1));
+  }
+  x0 = null;
+});
+libro.addEventListener('pointercancel', () => { x0 = null; });
+
+/* ---- índice ---- */
+let velo = null;
+function cerrarIndice(){ if (velo){ velo.remove(); velo = null; document.getElementById('bIndice').focus(); } }
+document.getElementById('bIndice').onclick = () => {
+  if (velo) return cerrarIndice();
+  velo = document.createElement('div');
+  velo.className = 'velo';
+  let filas = '';
+  paginas.forEach((p, i) => {
+    if (p.tipo === 'linea') filas += `<div class="grupo">${esc(p.titulo)}</div>`;
+    if (p.tipo === 'producto')
+      filas += `<button class="item" data-i="${i}"><b style="color:${p.color}">${esc(p.titulo)}</b><span>${esc(p.comp)}</span></button>`;
+  });
+  velo.innerHTML = `<div class="panel" role="dialog" aria-modal="true" aria-label="Índice de productos">
+      <div class="enc"><h2>Índice</h2><button class="btn" id="bCerrar">Cerrar</button></div>
+      <div class="lista">
+        <button class="item" data-i="0"><b>Portada</b><span>Inicio del catálogo</span></button>
+        ${filas}
+        <button class="item" data-i="${N - 1}"><b>Pedidos</b><span>Cómo pedir</span></button>
+      </div></div>`;
+  document.body.appendChild(velo);
+  velo.addEventListener('click', e => {
+    if (e.target === velo || e.target.id === 'bCerrar') return cerrarIndice();
+    const b = e.target.closest('.item');
+    if (b){ ir(+b.dataset.i); cerrarIndice(); }
+  });
+  velo.querySelector('#bCerrar').focus();
+};
+
+pintar();
+
+libro.addEventListener('click', async e => {
+  const b = e.target.closest('#bCopiar');
+  if (!b) return;
+  e.stopPropagation();
+  try { await navigator.clipboard.writeText('3007769903'); b.textContent = 'Copiado'; }
+  catch { const r = document.createRange(); r.selectNode(document.getElementById('numero'));
+          getSelection().removeAllRanges(); getSelection().addRange(r); b.textContent = 'Selecciona y copia'; }
+  setTimeout(() => { b.textContent = 'Copiar número'; }, 2400);
+});
+</script>
+
+</body>
+</html>
